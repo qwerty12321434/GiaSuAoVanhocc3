@@ -1,61 +1,36 @@
 package com.example.giasuaovanhocc3.model;
 
-import org.bson.codecs.pojo.annotations.BsonId;
-import org.bson.codecs.pojo.annotations.BsonProperty;
-import org.bson.types.ObjectId;
-
 import java.util.Date;
 import java.util.List;
-import java.util.Map; // Import Map cho trường mindmap
+import java.util.Map;
 
 public class Work {
 
-    @BsonId
-    private ObjectId id;
-
-    @BsonProperty(value = "title")
+    private Integer id;
     private String title;
-
-    @BsonProperty(value = "authorId")
-    private ObjectId authorId; // Tham chiếu đến _id của collection 'authors'
-
-    @BsonProperty(value = "grade")
-    private String grade;
-
-    @BsonProperty(value = "summary")
+    private Integer authorId;
+    private Integer grade;
     private String summary;
-
-    @BsonProperty(value = "analysis")
     private String analysis;
-
-    @BsonProperty(value = "mindmap")
-    private Map<String, Object> mindmap; // Dùng Map<String, Object> để biểu diễn JSON object
-
-    @BsonProperty(value = "tags")
+    private Map<String, Object> mindmap;
     private List<String> tags;
-
-    @BsonProperty(value = "createdAt")
     private Date createdAt;
-
-    @BsonProperty(value = "updatedAt")
     private Date updatedAt;
 
-    // Constructor rỗng cần thiết cho MongoDB POJO Codec
     public Work() {
     }
 
-    // Constructor với các trường bắt buộc (title, authorId)
-    public Work(String title, ObjectId authorId) {
+    public Work(String title, Integer authorId) {
         this.title = title;
         this.authorId = authorId;
     }
 
     // Getters and Setters
-    public ObjectId getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(ObjectId id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -67,19 +42,19 @@ public class Work {
         this.title = title;
     }
 
-    public ObjectId getAuthorId() {
+    public Integer getAuthorId() {
         return authorId;
     }
 
-    public void setAuthorId(ObjectId authorId) {
+    public void setAuthorId(Integer authorId) {
         this.authorId = authorId;
     }
 
-    public String getGrade() {
+    public Integer getGrade() {
         return grade;
     }
 
-    public void setGrade(String grade) {
+    public void setGrade(Integer grade) {
         this.grade = grade;
     }
 
