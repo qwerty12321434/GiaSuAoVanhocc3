@@ -1,48 +1,30 @@
 package com.example.giasuaovanhocc3.model;
 
-import org.bson.codecs.pojo.annotations.BsonId;
-import org.bson.codecs.pojo.annotations.BsonProperty;
-import org.bson.types.ObjectId;
-
 import java.util.Date;
+
 public class Author {
 
-    @BsonId
-    private ObjectId id;
-
-    @BsonProperty(value = "name")
+    private Integer id;
     private String name;
-
-    @BsonProperty(value = "bio")
     private String bio;
-
-    @BsonProperty(value = "birthYear")
-    private Integer birthYear; // Sử dụng Integer để cho phép giá trị null
-
-    @BsonProperty(value = "deathYear")
-    private Integer deathYear; // Sử dụng Integer để cho phép giá trị null
-
-    @BsonProperty(value = "createdAt")
+    private Integer birthYear;
+    private Integer deathYear;
     private Date createdAt;
-
-    @BsonProperty(value = "updatedAt")
     private Date updatedAt;
 
-    // Constructor rỗng cần thiết cho MongoDB POJO Codec
     public Author() {
     }
 
-    // Constructor với các trường bắt buộc (ví dụ: name)
     public Author(String name) {
         this.name = name;
     }
 
     // Getters and Setters
-    public ObjectId getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(ObjectId id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
